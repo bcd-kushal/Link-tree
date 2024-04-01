@@ -382,7 +382,7 @@ class App {
         tools.random(1 + 50 * (1 - mp), 5 + 100 * (1 - mp)) / state.area;
       const item = {
         p: 0,
-        color: `rgba(0,255,0,${tools.random(0.01, 0.18)})`,
+        color: `rgba(0,255,0,${tools.random(0.01, 0.4)})`,
         blinks: Array(tools.random(0, 3, true))
           .fill(null)
           .map((item) => {
@@ -553,7 +553,7 @@ class App {
     const size = 2;
     if (!mf) return;
     tools.drawPath(ctx, () => {
-      ctx.fillStyle = `rgba(0,200,0,${mf * 0.55})`;
+      ctx.fillStyle = `rgba(0,200,0,${mf * 0.75})`;
       ctx.fillRect(x - 1, y - 1, size, size);
     });
   }
@@ -565,7 +565,7 @@ class App {
     const ctx = context.plane;
     const { centerCoords } = plane;
     tools.drawPath(ctx, () => {
-      ctx.fillStyle = `rgba(0,125,0,${0.2 + (1 - p) * 1})`;
+      ctx.fillStyle = `rgba(0,188,0,${0.2 + (1 - p) * 1})`;
       ctx.fillRect( centerCoords[0], 0 + (doc.height / 2) * (1 - p), 1, doc.height * p );
       ctx.fillRect( 0 + (doc.width / 2) * (1 - p), centerCoords[1], doc.width * p, 1 );
     });
@@ -584,7 +584,7 @@ class App {
     const ef = tools.cellEasing(f, 0, 1, 1);
     if (i) {
       tools.drawPath(ctx, () => {
-        ctx.fillStyle = `rgba(0,90,0,${0.05 + (1 - p) * 0.18})`;
+        ctx.fillStyle = `rgba(0,188,0,${0.05 + (1 - p) * 0.18})`;
         ctx.fillRect(x, 0 + (doc.height / 2) * (1 - ef), 1, doc.height * ef);
       });
     }
@@ -606,7 +606,7 @@ class App {
     const f2 = conds[0] && conds[1] ? (p - point) / percent : conds[0] ? 1 : 0;
 
     const text = i - yCenter + "";
-    ctx.fillStyle = `rgba(0,110,0,${0.2 + (1 - f) * 0.75})`;
+    ctx.fillStyle = `rgba(0,188,0,${0.2 + (1 - f) * 0.95})`;
     const textCoords = [
       x - ctx.measureText(text).width / 2,
       y + cfg.sectionWidth / 2 + cfg.numberOffset,
@@ -642,7 +642,7 @@ class App {
     const ef = tools.cellEasing(f, 0, 1, 1);
     if (i2) {
       tools.drawPath(ctx, () => {
-        ctx.fillStyle = `rgba(0,150,0,${0.05 + (1 - p) * 0.18})`;
+        ctx.fillStyle = `rgba(0,188,0,${0.05 + (1 - p) * 0.9})`;
         ctx.fillRect(0 + (doc.width / 2) * (1 - ef), y, doc.width * ef, 1);
       });
     }
@@ -664,7 +664,7 @@ class App {
     if (f >= 1) f = 1;
     let f2 = conds[0] && conds[1] ? (p - point) / percent : conds[0] ? 1 : 0;
 
-    ctx.fillStyle = `rgba(0,110,0,${0.2 + (1 - f) * 0.75})`;
+    ctx.fillStyle = `rgba(0,188,0,${0.2 + (1 - f) * 0.95})`;
     tools.drawPath(ctx, () => {
       const o = (1 - f2) * 50;
       ctx.globalAlpha = f2;

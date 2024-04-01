@@ -1,6 +1,24 @@
 ---
 import "../../scss/graph/Graph.scss"
 
+const socials = [
+  { name: "GitHub",     link: "https://github.com/bcd-kushal" },
+  { name: "LinkedIn",   link: "https://linkedin.com/in/dev-kushal" },
+  { name: "Instagram",  link: "https://instagram.com/dev.kushalkumar" },
+  { name: "Discord",    link: "https://discordapp.com/users/628212302004355078" },
+  { name: "Codepen",    link: "#" },
+]
+
+const websites = [
+  { name: "Portfolio",  link: "https://portfolio.kushalkumarsaha.com" },
+  { name: "Official",   link: "https://kushalkumarsaha.com" },
+  { name: "Blogs",      link: "https://blogs.kushalkumarsaha.com" },
+]
+
+const personals = [
+  { name: "Email",      link: "mailto:dev@kushalkumarsaha.com" },
+  { name: "Phone",      link: "tel:+919123686897" },
+]
 ---
 
 <section id="graph-boxes">
@@ -16,26 +34,24 @@ import "../../scss/graph/Graph.scss"
 
     <!-- social links -->
     <div class="social-links">
-      <a href="#" class="text-animation" data-js="text">GITHUB</a>
-      <a href="#" class="text-animation" data-js="text">LINKEDIN</a>
-      <a href="#" class="text-animation" data-js="text">INSTAGRAM</a>
-      <a href="#" class="text-animation" data-js="text">DISCORD</a>
-      <a href="#" class="text-animation" data-js="text">INSTAGRAM</a>
+      {socials.map(social=>(
+        <a href={social.link} class="text-animation" data-js="text">{social.name.toUpperCase()}</a>
+      ))}
     </div>
 
     <!-- website links -->
     <div class="website-links">
-      <a href="#" class="text-animation" data-js="text">PORTFOLIO</a>
-      <a href="#" class="text-animation" data-js="text">OFFICIAL</a>
-      <a href="#" class="text-animation" data-js="text">BLOGS</a>
-      <!-- <a href="#"><span>S</span><span>E</span><span>R</span><span>V</span><span>I</span><span>C</span><span>E</span><span>S</span></a> -->
+      {websites.map(website=>(
+        <a href={website.link} class="text-animation" data-js="text">{website.name.toUpperCase()}</a>
+      ))}
     </div>
 
     
     <!-- personal links -->
     <div class="personal-links">      
-      <a href="#" class="text-animation" data-js="text">EMAIL</a>
-      <a href="#" class="text-animation" data-js="text">PHONE</a>
+      {personals.map(personal=>(
+        <a href={personal.link} class="text-animation" data-js="text">{personal.name.toUpperCase()}</a>
+      ))}
     </div>
 
 
